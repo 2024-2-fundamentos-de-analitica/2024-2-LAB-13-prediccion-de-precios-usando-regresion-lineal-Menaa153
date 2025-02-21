@@ -129,8 +129,8 @@ def optimize_hyperparameters(pipeline, X_train, y_train):
     grid_search = GridSearchCV(pipeline, param_grid, cv=10, scoring="neg_mean_absolute_error", n_jobs=-1)
     grid_search.fit(X_train, y_train)
 
-    print(f"✅ Mejor error absoluto medio: {-grid_search.best_score_}")
-    print(f"🔍 Mejores hiperparámetros: {grid_search.best_params_}")
+    print(f"Mejor error absoluto medio: {-grid_search.best_score_}")
+    print(f"Mejores hiperparámetros: {grid_search.best_params_}")
 
     return grid_search  # Retorna el GridSearchCV completo
 
@@ -196,7 +196,7 @@ def main():
     metrics_path = "files/output/metrics.json"
     save_metrics([metrics_train, metrics_test], metrics_path)
 
-    print(f"✅ Modelo guardado en {model_path}. Métricas en {metrics_path}.")
+    print(f" Modelo guardado en {model_path}. Métricas en {metrics_path}.")
 
 
 if __name__ == "__main__":
